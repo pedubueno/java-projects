@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE j8583-config PUBLIC "-//J8583//DTD CONFIG 1.0//EN"
+	"http://j8583.sourceforge.net/j8583.dtd">
+<j8583-config>
+<!-- This is a TEF config file -->
+
+<!-- These are the ISO headers to be prepended to the message types specified -->
+<!--  <header type="0200">ISO015000050</header>
+<header type="0210">ISO015000055</header>
+<header type="0400" ref="0200" />
+<header type="0410" ref="0210" />
+<header type="0800">ISO015000015</header>
+<header type="0810" ref="0800"/>
+<header type="0280" binary="true">ffffffff</header> -->
+
+
+
+<!-- The server example uses this to read the requests -->
+<parse type="0200">
+	<field num="2" type="LLVAR" />
+	<field num="3" type="NUMERIC" length="6" />
+	<field num="4" type="AMOUNT" />
+	<field num="7" type="DATE10" />
+	<field num="11" type="NUMERIC" length="6" />
+	<field num="12" type="TIME" />
+	<field num="13" type="DATE4" />
+	<field num="14" type="DATE4" />
+	<field num="22" type="NUMERIC" length="3" />
+	<field num="23" type="NUMERIC" length="3" />
+	<field num="35" type="LLVAR" />
+	<field num="38" type="NUMERIC" length="6" />
+	<field num="40" type="ALPHA" length="3" />
+	<field num="41" type="ALPHA" length="8" />
+	<field num="42" type="ALPHA" length="15" />
+	<field num="43" type="ALPHA" length="40" />
+	<field num="45" type="LLVAR" />
+	<field num="48" type="LLLVAR" />
+	<field num="49" type="ALPHA" length="3" />
+	<field num="52" type="BINARY" length="8" />
+	<field num="54" type="AMOUNT" />
+	<field num="55" type="LLLBIN" />
+	<field num="58" type="LLLVAR" />
+	<field num="59" type="LLLVAR" />
+	<field num="62" type="LLLVAR" />
+	<field num="67" type="NUMERIC" length="2" />
+	<field num="119" type="LLLVAR" />
+	<field num="120" type="LLLVAR" />
+	<field num="121" type="LLLVAR" />
+	<field num="122" type="LLLVAR" />
+	<field num="123" type="LLLVAR" />
+	<field num="125" type="LLLVAR" />
+</parse>
+
+<!-- The server example uses this to read the requests -->
+<parse type="0210">
+	<field num="3" type="NUMERIC" length="6" />
+	<field num="4" type="AMOUNT" />
+	<field num="7" type="DATE10" />
+	<field num="11" type="NUMERIC" length="6" />
+	<field num="12" type="TIME" />
+	<field num="13" type="DATE4" />
+	<field num="38" type="NUMERIC" length="6" />
+	<field num="39" type="NUMERIC" length="2" />
+	<field num="41" type="ALPHA" length="8" />
+	<field num="42" type="ALPHA" length="15" />
+	<field num="49" type="ALPHA" length="3" />
+	<field num="54" type="AMOUNT" />
+	<field num="55" type="LLLBIN" />
+	<field num="58" type="LLLVAR" />
+	<field num="62" type="LLLVAR" />
+	<field num="63" type="LLLVAR" />
+	<field num="119" type="LLLVAR" />
+	<field num="120" type="LLLVAR" />
+	<field num="121" type="LLLVAR" />
+	<field num="122" type="LLLVAR" />
+	<field num="123" type="LLLVAR" />
+	<field num="125" type="LLLVAR" />
+	<field num="127" type="LLLVAR" />
+</parse>
+
+<!-- this is for binary tests (message encoding AND fields) -->
+<parse type="0600">
+	<field num="4" type="AMOUNT" />
+	<field num="7" type="DATE10" />
+	<field num="11" type="NUMERIC" length="6" />
+	<field num="41" type="BINARY" length="8" />
+	<field num="42" type="BINARY" length="4" />
+	<field num="43" type="ALPHA" length="40" />
+	<field num="62" type="LLBIN" />
+	<field num="63" type="LLBIN" />
+	<field num="64" type="LLLBIN" />
+	<field num="65" type="LLLBIN" />
+	<field num="102" type="LLLVAR" />
+</parse>
+
+<parse type="0800">
+    <field num="3" type="ALPHA" length="6">123456</field>
+    <field num="12" type="DATE4">1231</field>
+    <field num="17" type="DATE4">1231</field>
+</parse>
+
+<parse type="0810" extends="0800">
+    <field num="17" type="exclude"/>
+    <field num="39" type="ALPHA" length="2"/>
+</parse>
+
+<parse type="0201">
+	<field num="3" type="NUMERIC" length="19" />
+</parse>
+<parse type="0202">
+	<field num="3" type="NUMERIC" length="22" />
+</parse>
+<parse type="0280">
+	<field num="3" type="NUMERIC" length="2" />
+</parse>
+<parse type="0281">
+    <field num="3" type="LLBCDBIN"/>
+</parse>
+<parse type="0282">
+    <field num="3" type="LLLBCDBIN"/>
+</parse>
+<parse type="0283">
+    <field num="3" type="LLLLBCDBIN"/>
+</parse>
+
+</j8583-config>
