@@ -99,9 +99,4 @@ public class Util {
 		return lastHostNsu;		
 		
 	}
-	
-	
-	
-	
-	
 }

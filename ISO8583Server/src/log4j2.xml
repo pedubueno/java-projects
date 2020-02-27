@@ -18,8 +18,8 @@
     </Appenders>
     <Loggers>
         <Root level="info">
-            <!-- <appender-ref ref="console" />  -->
-            <!-- <appender-ref ref="fileLogger" /> -->
+          <appender-ref ref="console" /> 
+        <!-- <appender-ref ref="fileLogger" />  -->
         </Root>
     </Loggers>
 </Configuration>

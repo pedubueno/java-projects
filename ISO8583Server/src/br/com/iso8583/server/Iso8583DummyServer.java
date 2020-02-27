@@ -57,6 +57,8 @@ public class Iso8583DummyServer
 		{
 			scanner.close();
 		}
+		
+		log.info("STOPING ISO8583 SERVER(s)");
 
 		synchronized (instance.isoServerManagerList)
 		{

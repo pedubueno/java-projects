@@ -2,7 +2,6 @@ package br.com.iso8583.server;
 
 import java.net.ConnectException;
 import java.net.Socket;
-import java.net.SocketException;
 import java.net.SocketTimeoutException;
 
 import org.apache.logging.log4j.LogManager;
@@ -61,6 +60,11 @@ public class Iso8583DummyServerThreadWorker extends Thread {
 
 						log.info("MESSAGE RECV FROM HOST. TOTAL BYTES: " + request.length + " | HEX: "
 								+ Util.bytesToHex(request));
+						
+						//System.out.println("MESSAGE RECV FROM HOST. TOTAL BYTES: " + request.length + " | HEX: "
+						//		+ Util.bytesToHex(request));
+
+						
 
 						IsoMessage tst = mf.parseMessage(request, 0, true);
 
@@ -99,6 +103,8 @@ public class Iso8583DummyServerThreadWorker extends Thread {
 		sClient.getOutputStream().flush();
 
 		log.info("MESSAGE SENT TO CLIENT. TOTAL BYTES: " + response.length + " | HEX: " + Util.bytesToHex(response));
+		//System.out.println("MESSAGE SENT TO CLIENT. TOTAL BYTES: " + response.length + " | HEX: " + Util.bytesToHex(response));
+
 
 	}
 
@@ -189,5 +195,6 @@ public class Iso8583DummyServerThreadWorker extends Thread {
 	public void informStop(boolean shouldManagerStop) {
 		// someone called us to close, close the connections
 		shutdownRealClientConnection();
+		
 	}
 }
